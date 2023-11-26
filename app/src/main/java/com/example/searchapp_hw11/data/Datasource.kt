@@ -1,24 +1,36 @@
 package com.example.searchapp_hw11.data
 
-import com.example.searchapp_hw11.R.drawable.*
+import com.example.searchapp_hw11.R.drawable.img1
+import com.example.searchapp_hw11.R.drawable.img10
+import com.example.searchapp_hw11.R.drawable.img11
+import com.example.searchapp_hw11.R.drawable.img12
+import com.example.searchapp_hw11.R.drawable.img13
+import com.example.searchapp_hw11.R.drawable.img14
+import com.example.searchapp_hw11.R.drawable.img2
+import com.example.searchapp_hw11.R.drawable.img3
+import com.example.searchapp_hw11.R.drawable.img4
+import com.example.searchapp_hw11.R.drawable.img5
+import com.example.searchapp_hw11.R.drawable.img6
+import com.example.searchapp_hw11.R.drawable.img7
+import com.example.searchapp_hw11.R.drawable.img8
+import com.example.searchapp_hw11.R.drawable.img9
 import com.example.searchapp_hw11.model.Animal
 
-class Datasource {
-    fun getSettings() = listOf(
-        Animal(id = 0, title = "Jellyfish", image = img1),
-        Animal(id = 1, title = "Fox", image = img2),
-        Animal(id = 2, title = "Turtle", image = img3),
-        Animal(id = 3, title = "Dog", image = img4),
-        Animal(id = 4, title = "Monkey", image = img5),
-        Animal(id = 5, title = "Dolphin", image = img6),
-        Animal(id = 6, title = "Panda", image = img7),
-        Animal(id = 7, title = "Hedgehog", image = img8),
-        Animal(id = 8, title = "Penguin", image = img9),
-        Animal(id = 9, title = "Duck", image = img10),
-        Animal(id = 10, title = "Squirrel", image = img11),
-        Animal(id = 11, title = "Parrot", image = img12),
-        Animal(id = 12, title = "Rabbit", image = img13),
-        Animal(id = 13, title = "Monkey", image = img14),
-        Animal(id = 14, title = "Tiger", image = img15)
-    )
+object Datasource {
+    val animals = listOf(
+        Animal("Jellyfish", img1, "Underwater picture of a jellyfish"),
+        Animal("Fox", img2, "Edgy picture of a fox"),
+        Animal("Turtle", img3, "Turtle in the ocean"),
+        Animal("Dog", img4, "Sad dog"),
+        Animal("Monkey", img5, "Saddest monkey"),
+        Animal("Dolphin", img6, "Happy dolphin"),
+        Animal("Panda", img7, "Panda - eats all the time"),
+        Animal("Hedgehog", img8, "Who's this cute gentleman"),
+        Animal("Penguin", img9, "Confused penguin"),
+        Animal("Duck", img10, "Just a duck ducking, nothing to see here"),
+        Animal("Squirrel", img11, "Squirrel goes: WHERE ARE MY NUTS???"),
+        Animal("Parrot", img12, "Little potatoe parrot"),
+        Animal("Rabbit", img13, "Rabbit is about to get eaten"),
+        Animal("Tiger", img14, "We all need one good stretch from time to time")
+    ).associateBy { it.title }
 }

@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingHorizontal="16dp"
+    android:paddingTop="48dp"
+    tools:context=".fragment.AnimalFragment">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ivFragmentAnimal"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:importantForAccessibility="no"
-        app:srcCompat="@drawable/img1"
-        android:scaleType="centerCrop" />
+        android:layout_marginTop="16dp">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvFragmentTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:textSize="24sp"
-        android:text="Jellyfish"
-        android:textStyle="bold" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvFragmentDescription"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/animalRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
