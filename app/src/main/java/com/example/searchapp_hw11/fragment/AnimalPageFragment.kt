@@ -15,12 +15,16 @@ class AnimalPageFragment : Fragment() {
 
     private var title: String? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        title = requireArguments().getString("title")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
-        title = requireArguments().getString("title")
         _binding = FragmentAnimalPageBinding.inflate(inflater, container, false)
 
         return binding.root
