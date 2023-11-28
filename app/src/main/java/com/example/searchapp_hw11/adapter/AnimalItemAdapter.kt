@@ -39,14 +39,17 @@ class AnimalItemAdapter :
     inner class AnimalItemViewHolder(private val binding: AnimalItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind() {
-            val animal = currentList[adapterPosition]
+        private val animal = currentList[adapterPosition]
 
+        init {
+            binding.imageItem.setOnClickListener {
+                itemOnClick?.invoke(animal.title)
+            }
+        }
+
+        fun bind() {
             with(binding) {
                 imageItem.setImageResource(animal.image)
-                imageItem.setOnClickListener {
-                    itemOnClick?.invoke(animal.title)
-                }
             }
         }
     }
