@@ -3,6 +3,7 @@
     <style name="Base.Theme.SearchApp_HW11" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@android:color/background_dark</item>
     </style>
 
     <style name="Theme.SearchApp_HW11" parent="Base.Theme.SearchApp_HW11" />

@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.searchapp_hw11.databinding.AnimalItemBinding
 import com.example.searchapp_hw11.model.Animal
 
-class AnimalItemAdapter : ListAdapter<Animal, AnimalItemAdapter.AnimalItemViewHolder>(
-    object : DiffUtil.ItemCallback<Animal>() {
+class AnimalItemAdapter :
+    ListAdapter<Animal, AnimalItemAdapter.AnimalItemViewHolder>(AnimalDiffUtil) {
+
+    object AnimalDiffUtil : DiffUtil.ItemCallback<Animal>() {
 
         override fun areItemsTheSame(oldItem: Animal, newItem: Animal): Boolean {
             return oldItem.title == newItem.title
@@ -20,9 +22,9 @@ class AnimalItemAdapter : ListAdapter<Animal, AnimalItemAdapter.AnimalItemViewHo
         }
 
     }
-) {
 
-    var callBack: ((String) -> Unit)? = null
+
+    var itemOnClick: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimalItemViewHolder {
         return AnimalItemViewHolder(
@@ -43,7 +45,7 @@ class AnimalItemAdapter : ListAdapter<Animal, AnimalItemAdapter.AnimalItemViewHo
             with(binding) {
                 imageItem.setImageResource(animal.image)
                 imageItem.setOnClickListener {
-                    callBack?.invoke(animal.title)
+                    itemOnClick?.invoke(animal.title)
                 }
             }
         }

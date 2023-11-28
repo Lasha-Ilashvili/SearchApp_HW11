@@ -38,7 +38,7 @@ class AnimalFragment : Fragment() {
 
     private fun setUpRecyclerView() {
         adapter = AnimalItemAdapter().apply {
-            callBack = ::startNewFragment
+            itemOnClick = ::startNewFragment
             submitList(animalList)
         }
         binding.animalRecyclerView.adapter = adapter
